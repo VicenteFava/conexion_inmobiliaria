@@ -24,6 +24,14 @@ class Property < ActiveRecord::Base
                                                                "image/gif" ]
 
   before_create :generate_reference
+  
+  def photo_url
+     principal_photo.url(:medium)
+  end
+
+  def path_url
+     principal_photo.url(:medium)
+  end
 
   private
 

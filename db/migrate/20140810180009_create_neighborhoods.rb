@@ -3,7 +3,7 @@ class CreateNeighborhoods < ActiveRecord::Migration
     create_table :neighborhoods do |t|
 
       t.string :name
-      t.integer :properties_count
+      t.integer :properties_count, default: 0
 
       t.timestamps
     end

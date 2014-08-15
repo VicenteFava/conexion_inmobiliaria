@@ -10,7 +10,7 @@ class CreateProperties < ActiveRecord::Migration
       t.boolean :for_permutation
       t.boolean :visible
 
-      t.integer :owner_id
+      t.integer :client_id
       t.integer :property_type_id
       t.integer :neighborhood_id
 

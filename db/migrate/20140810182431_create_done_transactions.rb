@@ -4,7 +4,7 @@ class CreateDoneTransactions < ActiveRecord::Migration
 
       t.integer :property_id
       t.integer :client_id
-      t.integer :transaction_type
+      t.string :transaction_type
 
       t.float :transaction_price
       t.date :transaction_date

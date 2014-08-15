@@ -13,4 +13,12 @@ class Photo < ActiveRecord::Base
                                                                "image/jpeg",
                                                                "image/png",
                                                                "image/gif" ]
+
+  def url
+     photo.url(:medium)
+  end
+
+  def path
+     photo.url(:medium)
+  end
 end
