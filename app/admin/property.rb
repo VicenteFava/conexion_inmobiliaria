@@ -19,8 +19,8 @@ ActiveAdmin.register Property, as: "Propiedades" do
     id_column
     column("Foto principal") { |property| link_to(image_tag(property.photo_url, :width => '100'), admin_propiedade_path(property)) }
     column("Referencia") { |property| property.reference }
-    column("Tipo de propiedad") { |property| PropertyType.find(property.property_type_id).name if property.property_type_id.present? }
-    column("Propietario") { |property| link_to Client.find(property.client_id).name, admin_cliente_path(property.client_id) if property.client_id.present? }
+    column("Tipo de propiedad") { |property| link_to "#{property.property_type.name}", admin_tipo_de_propiedade_path(property.property_type) if property.property_type_id.present? }
+    column("Propietario") { |property| link_to "#{property.client.name}", admin_cliente_path(property.client_id) if property.client_id.present? }
     actions
   end
 
@@ -115,6 +115,13 @@ ActiveAdmin.register Property, as: "Propiedades" do
       end
     end
 
+    panel "Fotos de la Propiedad" do
+      table_for property.photos  do
+          column("Referencia") { |photo| link_to "#{photo.id}",  admin_foto_path(photo) }
+          column("Foto") { |photo| image_tag(photo.url, :width => '500') }
+      end
+    end
+
     panel "Transacciones Realizadas de la Propiedad" do
       table_for property.done_transactions  do
           column("Cliente") { |t| link_to "#{t.client.name}", admin_cliente_path(t.client) }
@@ -125,12 +132,13 @@ ActiveAdmin.register Property, as: "Propiedades" do
       end
     end
 
-    panel "Fotos de la Propiedad" do
-      table_for property.photos  do
-          column("Referencia") { |photo| link_to "#{photo.id}",  admin_foto_path(photo) }
-          column("Foto") { |photo| image_tag(photo.url, :width => '500') }
+    panel "Visitas" do
+      table_for(property.visits) do
+        column("Cliente") { |visit| link_to "#{visit.client.name}", admin_cliente_path(visit.client) }
+        column("Fecha") { |visit| visit.date }
       end
     end
+
   end
 
 

@@ -10,6 +10,9 @@ class Property < ActiveRecord::Base
   has_many :done_transactions, dependent: :destroy
   accepts_nested_attributes_for :done_transactions
 
+  has_many :visits, dependent: :destroy
+  accepts_nested_attributes_for :visits
+
   has_attached_file :principal_photo, :styles => { :medium => "800x" },
                     #:convert_options => { :thumb => "-quality 92" }, 
                     #PROBAR DEPSUES CON FOTOS GRANDES

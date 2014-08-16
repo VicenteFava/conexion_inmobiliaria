@@ -37,7 +37,9 @@ ActiveAdmin.register Client, as: "Clientes" do
 
     panel "Propiedades" do
       table_for(client.properties) do
-          column("Propiedad") {|property| link_to "#{property.reference}",  admin_propiedade_path(property)}
+          column("Foto principal") { |property| link_to(image_tag(property.photo_url, :width => '100'), admin_propiedade_path(property)) }
+          column("Referencia") {|property| link_to "#{property.reference}",  admin_propiedade_path(property)}
+          column("Tipo de propiedad") { |property| link_to "#{property.property_type.name}", admin_tipo_de_propiedade_path(property.property_type) if property.property_type_id.present? }
       end
     end
 
@@ -48,6 +50,22 @@ ActiveAdmin.register Client, as: "Clientes" do
           column("Precio de la transaccion") { |t| t.transaction_price }
           column("Fecha de la transaccion") { |t| t.transaction_date }
           column("Fecha de fin de la transaccion") { |t| t.transaction_end_date }
+      end
+    end
+
+    panel "Visitas" do
+      table_for(client.visits) do
+        column("Foto principal") { |visit| link_to(image_tag(visit.property.photo_url, :width => '100'), admin_propiedade_path(visit.property)) }
+        column("Referencia") { |visit| link_to "#{visit.property.reference}", admin_propiedade_path(visit.property) if visit.property_id.present? }
+        column("Tipo de propiedad") { |visit| link_to "#{visit.property.property_type.name}", admin_tipo_de_propiedade_path(visit.property.property_type) if visit.property.property_type_id.present? }
+        column("Fecha") { |visit| visit.date }
+      end
+    end
+
+    panel "Tareas" do
+      table_for(client.tasks) do
+          column("Id") { |t| link_to "#{t.id}",  admin_tarea_path(t) }
+          column("Tarea") { |t| t.task }
       end
     end
   end

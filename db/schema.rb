@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815225034) do
+ActiveRecord::Schema.define(version: 20140816153507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,24 @@ ActiveRecord::Schema.define(version: 20140815225034) do
   create_table "property_types", force: true do |t|
     t.string   "name"
     t.integer  "properties_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "client_id"
+    t.integer  "admin_user_id"
+    t.text     "task"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visits", force: true do |t|
+    t.integer  "property_id"
+    t.integer  "client_id"
+    t.integer  "admin_user_id"
+    t.date     "date"
+    t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

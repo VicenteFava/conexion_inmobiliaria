@@ -34,7 +34,7 @@ ActiveAdmin.register Photo, as: "Fotos" do
 
   form do |f|
     f.inputs "Detalles de la Foto" do
-      f.input :property_id, :as => :select, :collection => Property.order('reference').all.map{|p| ["#{p.reference}", p.id]}, label: "Propiedad"
+      f.input :property_id, :as => :select, :collection => Property.order('reference').all.map{ |p| ["#{p.reference}", p.id] }, label: "Propiedad"
       f.input :photo, as: :file, :hint => f.template.image_tag(f.object.url), label: "Foto"
     end
     f.actions

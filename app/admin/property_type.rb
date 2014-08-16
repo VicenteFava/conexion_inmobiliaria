@@ -2,6 +2,8 @@ ActiveAdmin.register PropertyType, as: "Tipo De Propiedades" do
 
   menu :parent => "Propiedades", :priority => 1
 
+  config.filters = false
+  
   permit_params :name
 
   index do

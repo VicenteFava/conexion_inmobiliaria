@@ -4,4 +4,10 @@ class Client < ActiveRecord::Base
 
   accepts_nested_attributes_for :properties
   accepts_nested_attributes_for :done_transactions
+
+  has_many :visits, dependent: :destroy
+  accepts_nested_attributes_for :visits
+
+  has_many :tasks, dependent: :destroy
+  accepts_nested_attributes_for :tasks
 end

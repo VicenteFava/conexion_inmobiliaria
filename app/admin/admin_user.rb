@@ -4,6 +4,8 @@ ActiveAdmin.register AdminUser, :as => "Administradores" do
 
   permit_params :email, :password, :password_confirmation
 
+  config.filters = false
+  
   index do
     selectable_column
     id_column
@@ -25,13 +27,11 @@ ActiveAdmin.register AdminUser, :as => "Administradores" do
     end
   end
 
-  filter :email
-
   form do |f|
     f.inputs "Detalles del Administrador" do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.input :email, label: "Email"
+      f.input :password, label: "Constraseña"
+      f.input :password_confirmation,  label: "Confirme la constraseña"
     end
     f.actions
   end
