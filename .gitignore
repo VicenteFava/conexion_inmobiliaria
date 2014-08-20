@@ -20,3 +20,4 @@ doc/
 .secret
 secrets.yml
 /libiconv-1.13.1/*
+public/assets/images/*
