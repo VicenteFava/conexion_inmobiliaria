@@ -1,0 +1,91 @@
+.header {
+  border-top: 4px solid #FF8819 !important;
+  border-bottom: none !important;
+  margin-bottom: 20px;
+}
+
+.phone {
+  text-align: right;
+  font-weight: bold;
+}
+
+.numbers {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #FF8819;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.active-button {
+  background-color: #fff;
+  border-bottom: 2px solid #FF8819 !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  -webkit-transition : border-color 1000ms ease-out; 
+  -moz-transition : border-color 1000ms ease-out;
+  -o-transition : border-color 1000ms ease-out;
+  -ms-transition : border-color 1000ms ease-out;
+  background-color: #fff;
+  border-bottom: 2px solid white;
+  padding-bottom: 6.5px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #fff;
+  border-bottom: 2px solid #FF8819;
+}
+
+.navbar-nav > li {
+  margin-right: 5px; 
+  margin-left: 5px;
+}
+
+.btn-primary {
+  color: #fff !important;
+  text-shadow: 0 -1px 0 #FF8819 !important;
+  font-weight: normal !important;
+}
+
+.bootstrap-select .btn:focus {
+  outline: none !important
+}
+
+.btn-group {
+  background-color: #FF8819; 
+}
+
+.form-control {
+  box-shadow: none !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  outline: none !important;
+}
+
+@media (max-width: 767px) {
+  .numbers {
+    display:none;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-default .navbar-nav > li > a {
+    padding-left: 10px;
+    padding-right: 10px; 
+  }
+}
+
+/*.navbar-collapse.in {
+  overflow-y: hidden !important;
+}*/

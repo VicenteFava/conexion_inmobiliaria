@@ -1,0 +1,39 @@
+<!-- Main Navbar -->
+<nav class="navbar navbar-default navbar-static-top header" role="navigation">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-3 col-sm-3">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header">
+          <%= link_to image_tag("logo-dark.png"), root_path, class: 'navbar-brand' %>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <!-- Navbar -->
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to "Principal", root_path, class: ('active-button' if current_page? root_path) %> 
+            </li>
+            <li>
+              <%= link_to "Propiedades", properties_path, class: ('active-button' if current_page? properties_path) %>
+            </li>
+            <li>
+              <%= link_to "Contacto", root_path %>
+            </li>
+          </ul><!-- /.navbar-nav -->
+        </div><!-- /.collapse -->
+      </div>
+      <div class="col-md-3 col-sm-3 numbers">
+        <div class="phone">2696 74 12</div>
+        <div class="phone">099 281 543</div>
+      </div>
+    </div>
+  </div><!-- /.container -->
+</nav><!-- /.navbar -->
+

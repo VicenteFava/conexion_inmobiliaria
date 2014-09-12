@@ -7,6 +7,9 @@ class Photo < ActiveRecord::Base
                     :url => "/assets/images/:property_id/:basename.:extension",  
                     :path => ":rails_root/public/assets/images/:property_id/:basename.:extension"  
 
+
+  # PASAR A UN CONCERN PORUQE ESTA LO MISMO EN PROPERTY
+
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => [ "image/jpg",

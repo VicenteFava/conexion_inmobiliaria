@@ -5,13 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= stylesheet_link_tag "bootstrap_template" %>
+  <%= stylesheet_link_tag "bootstrap-select_template.min" %>
+  <%= stylesheet_link_tag "font-awesome_template.min" %>
+  <%= stylesheet_link_tag "theme_template" %>
+  <%= stylesheet_link_tag "custom" %>
+  <%= javascript_include_tag 'bootstrap.min' %>
+  <%= javascript_include_tag 'bootstrap-select.min' %>
+  <%= javascript_include_tag 'holder' %>
+  <%= javascript_include_tag 'static_pages' %>
 
   <%= yield :header %> 
   
 </head>
 <body>
 
-<%= yield %>
+  <!-- Navigation bar -->
+  <%= render partial: "shared/header" %>
+  
+  <%= yield %>
 
 </body>
 </html>
