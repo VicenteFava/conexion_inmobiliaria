@@ -5,9 +5,9 @@ class PropertiesController < ApplicationController
   	puts '/' * 100
 
   	if params.has_key?(:property_type_id) 
-  		@properties = []
+  		@properties = Property.where(visible: false).paginate(:page => params[:page])
   	else
-  		@properties = Property.all
+  		@properties = Property.where(visible: true).paginate(:page => params[:page])
   	end
 
     @property_types = PropertyType.for_select

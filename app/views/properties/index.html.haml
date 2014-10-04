@@ -8,10 +8,14 @@
   - @properties.each_with_index do |p, i|
     - if i % 2 == 0
       %section.wrapper-md.list
+        - @last_white = true
         = render partial: 'property', :locals => { :property => p }
-    -else
+    - else
       %section.wrapper-md.list.background-gray
+        - @last_white = false
         = render partial: 'property', :locals => { :property => p }
 - else
   .no-results
 
+.container
+  = will_paginate @properties

@@ -52,6 +52,10 @@ gem 'bootstrap-sass'
 
 gem 'sprockets'
 
+gem 'will_paginate'
+
+gem 'bootstrap-will_paginate'
+
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'spring'
