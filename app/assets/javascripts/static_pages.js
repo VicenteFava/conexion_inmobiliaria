@@ -1,5 +1,20 @@
 $(document).ready(function(){
-  $('.selectpicker').selectpicker();
+  $( '.selectpicker' ).selectpicker();
+  $( '.overlay-container' ).height($( '.overlay-container' ).width()*.75);
+
+  $(window).on( 'resize', function(){
+    $( '.overlay-container' ).height($( '.overlay-container' ).width()*.75);
+  });
+
+  $( '.resize-image' ).each(function() {
+    if($( this ).css('width') < $( '.overlay-container' ).css('width')) {
+      $( this ).css('width', '100%');
+    }
+  })
+
+
+  //$('.selectpicker').selectpicker('refresh');
+
 
   // $("#transaction_type").change(function() {
   //   if($(this).val().length > 0) {

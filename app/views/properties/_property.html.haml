@@ -1,0 +1,33 @@
+.container
+  .row
+    .row
+      .col-sm-12.col-md-10
+        %article.post
+          .col-sm-12.col-md-5
+            = link_to property do
+              %img.img-responsive.img-thumbnail{ src: property.principal_photo.url(:height => '200') }
+          .col-sm-12.col-md-7
+            %h3
+              %a{:href => "#link"}
+                4384 Timberbrook Lane,
+                %span.text-muted Loveland, CO 80537
+            %p This home offers a great floor plan with kitchen open to a spacious living room and dining area.
+            %ul.list-unstyled
+              %li
+                %i.fa.fa-fw.fa-th
+                1.460 Ft
+                %sup 2
+              %li
+                %i.fa.fa-fw.fa-columns
+                2 Beds
+              %li
+                %i.fa.fa-fw.fa-female
+                1,5 Bathrooms
+              %li
+                %i.fa.fa-fw.fa-truck
+                2 Garage
+              %li
+                %i.fa.fa-fw.fa-signal
+                Internet
+            %p
+              = link_to 'View More »', property, class: 'btn btn-primary'

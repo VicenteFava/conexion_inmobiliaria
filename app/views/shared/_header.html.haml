@@ -1,0 +1,25 @@
+/ Main Navbar
+%nav.navbar.navbar-default.navbar-static-top.header{ role: :navigation }
+  .container
+    .row.clearfix
+      .col-md-3.col-sm-3
+        %button.navbar-toggle{ 'data-target' => '.navbar-main-collapse', 'data-toggle' => 'collapse', type: :button }
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        .navbar-header
+          = link_to image_tag('logo-dark.png'), root_path, class: 'navbar-brand'
+      .col-md-6.col-sm-6
+        / Navbar
+        .collapse.navbar-collapse.navbar-main-collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to 'Principal', root_path, class: ('active-button' if current_page? root_path)
+            %li
+              = link_to 'Propiedades', properties_path, class: ('active-button' if current_page? properties_path)
+            %li
+              = link_to 'Contacto', root_path
+      .col-md-3.col-sm-3.numbers
+        .phone 2696 74 12
+        .phone 099 281 543

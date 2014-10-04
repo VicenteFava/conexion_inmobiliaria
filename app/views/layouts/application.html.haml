@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title ConexionInmobiliaria
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %meta{:charset => "utf-8"}
+      %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+        %meta{:content => "", :name => "description"}
+          %meta{:content => "", :name => "author"}
+            = stylesheet_link_tag "bootstrap_template"
+            = stylesheet_link_tag "bootstrap-select_template.min"
+            = stylesheet_link_tag "font-awesome_template.min"
+            = stylesheet_link_tag "theme_template"
+            = stylesheet_link_tag "custom"
+            = javascript_include_tag 'bootstrap.min'
+            = javascript_include_tag 'bootstrap-select.min'
+            = javascript_include_tag 'holder'
+            = javascript_include_tag 'static_pages'
+            = yield :header
+  %body
+    / Navigation bar
+    = render partial: "shared/header"
+    = yield
+    = render partial: "shared/footer"

@@ -1,7 +1,7 @@
 .header {
   border-top: 4px solid #FF8819 !important;
   border-bottom: none !important;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .phone {
@@ -11,7 +11,7 @@
 
 .numbers {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 19px;
   color: #FF8819;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -71,6 +71,36 @@
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   outline: none !important;
+}
+
+.list {
+  padding-bottom: 0px;
+}
+
+.background-gray {
+  background: #e8e8e8;
+}
+
+.no-results {
+  height: 400px;
+}
+
+.search {
+  padding-bottom: 35px;
+  padding-top: 17px;
+}
+
+.resize-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  height: 100% !important;
+  max-width: none !important;
+}
+
+.overlay-container {
+  height: 220px;
 }
 
 @media (max-width: 767px) {

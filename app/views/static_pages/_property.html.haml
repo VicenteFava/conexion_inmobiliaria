@@ -1,0 +1,22 @@
+.thumbnail
+  .overlay-container
+    %img{ src: property.principal_photo.url(:height => '200'), class: 'resize-image'}
+      .overlay-content
+        %h3.h4.headline Great Deal
+        %p So you know you're getting a top quality property from an experienced team.
+  .thumbnail-meta
+    %p
+      %i.fa.fa-fw.fa-home
+      1199 Pacific Hwy #110
+    %p
+      %i.fa.fa-fw.fa-map-marker
+      San Diego, CA 92101
+  .thumbnail-meta
+    %i.fa.fa-fw.fa-info-circle
+    1460 Ft | 2 Bed | 1,5 Bath | 2 Garage
+  .thumbnail-meta
+    %i.fa.fa-fw.fa-dollar
+    %span.h3 350.000
+    = link_to property, class: 'btn btn-link pull-right' do
+      View
+      %i.fa.fa-arrow-right
