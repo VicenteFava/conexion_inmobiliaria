@@ -15,7 +15,7 @@ ActiveAdmin.register DoneTransaction, as: "Transacciones Realizadas" do
     actions
   end
 
-  filter :property, label: "Propiedad", as: :select, collection: Property.all.order('reference').map{|p| ["#{p.reference}", p.id]}
+  filter :property, label: "Propiedad", as: :select, collection: -> { Property.all.order('reference').map{|p| ["#{p.reference}", p.id]} }
   filter :client, label: "Cliente"
   filter :transaction_type, label: "Tipo de transaccion", as: :select, collection: ["Alquiler","Alquiler de temporada", "Permutacion", "Venta"]
   filter :transaction_price, label: "Precio de la transaccion"

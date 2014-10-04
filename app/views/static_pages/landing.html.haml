@@ -1,0 +1,160 @@
+/ hero
+%section.wrapper-lg.bg-custom-home
+  .container
+    .row
+      .col-sm-12
+        .widget.padding-lg.bg-dark
+          %h1.heading-lg.text-center.text-light Buy, Sell, or Rent Properties
+          %br.spacer-lg/
+          = render partial: 'shared/search'
+/ end hero
+
+%section.wrapper-md
+  .container
+    .row
+      .col-sm-12.text-center
+        %h2
+          %i.fa.fa-trophy.text-primary
+          We are offering
+          %span.text-muted the best real estate
+          deals
+        %p.lead We pride ourselves on taking care of our customers. Between our detailed theme documentation, screencasts tand knowledgebase you’re sure to get up and running in no time.
+        %p
+          %a.btn.btn-lg.btn-primary{:href => "#link"} Learn More »
+
+%section.wrapper-md.bg-highlight
+  .container
+    - @random_properties.each_with_index do |p, i|
+      - if i % 4 == 0
+        .row
+      .col-sm-6.col-md-3
+        = render partial: 'property', :locals => { :property => p }
+
+
+/ %section.wrapper-md.bg-primary
+/   .container
+/     %h2.text-center.headline Featured This Week
+/     %br.spacer-lg
+/       .row
+/         .col-sm-6.col-md-3
+/           .thumbnail.text-default
+/             .overlay-container
+/               %img{:src => @random_properties[1].principal_photo.url(:height => '200')}
+/                 .overlay-content
+/                   %h3.h4.headline Great Deal
+/                   %p So you know you're getting a top quality property from an experienced team.
+/             .thumbnail-meta
+/               %p
+/                 %i.fa.fa-fw.fa-home
+/                 1199 Pacific Hwy #110
+/               %p
+/                 %i.fa.fa-fw.fa-map-marker
+/                 San Diego, CA 92101
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-info-circle
+/               1460 Ft | 2 Bed | 1,5 Bath | 2 Garage
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-dollar
+/               %span.h3.heading-default 350.000
+/               %a.btn.btn-link.pull-right{:href => "#link"}
+/                 View
+/                 %i.fa.fa-arrow-right
+/         .col-sm-6.col-md-3
+/           .thumbnail.text-default
+/             .overlay-container
+/               %img{:src => @random_properties[0].principal_photo.url(:height => '200')}
+/                 .overlay-content
+/                   %h3.h4.headline Great Deal
+/                   %p So you know you're getting a top quality property from an experienced team.
+/             .thumbnail-meta
+/               %p
+/                 %i.fa.fa-fw.fa-home
+/                 1199 Pacific Hwy #110
+/               %p
+/                 %i.fa.fa-fw.fa-map-marker
+/                 San Diego, CA 92101
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-info-circle
+/               1460 Ft | 2 Bed | 1,5 Bath | 2 Garage
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-dollar
+/               %span.h3.heading-default 350.000
+/               %a.btn.btn-link.pull-right{:href => "#link"}
+/                 View
+/                 %i.fa.fa-arrow-right
+/         .col-sm-6.col-md-3
+/           .thumbnail.text-default
+/             .overlay-container
+/               %img{:src => @random_properties[1].principal_photo.url(:height => '200')}
+/                 .overlay-content
+/                   %h3.h4.headline Great Deal
+/                   %p So you know you're getting a top quality property from an experienced team.
+/             .thumbnail-meta
+/               %p
+/                 %i.fa.fa-fw.fa-home
+/                 1199 Pacific Hwy #110
+/               %p
+/                 %i.fa.fa-fw.fa-map-marker
+/                 San Diego, CA 92101
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-info-circle
+/               1460 Ft | 2 Bed | 1,5 Bath | 2 Garage
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-dollar
+/               %span.h3.heading-default 350.000
+/               %a.btn.btn-link.pull-right{:href => "#link"}
+/                 View
+/                 %i.fa.fa-arrow-right
+/         .col-sm-6.col-md-3
+/           .thumbnail.text-default
+/             .overlay-container
+/               %img{:src => @random_properties[2].principal_photo.url(:height => '200')}
+/                 .overlay-content
+/                   %h3.h4.headline Great Deal
+/                   %p So you know you're getting a top quality property from an experienced team.
+/             .thumbnail-meta
+/               %p
+/                 %i.fa.fa-fw.fa-home
+/                 1199 Pacific Hwy #110
+/               %p
+/                 %i.fa.fa-fw.fa-map-marker
+/                 San Diego, CA 92101
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-info-circle
+/               1460 Ft | 2 Bed | 1,5 Bath | 2 Garage
+/             .thumbnail-meta
+/               %i.fa.fa-fw.fa-dollar
+/               %span.h3.heading-default 350.000
+/               %a.btn.btn-link.pull-right{:href => "#link"}
+/                 View
+/                 %i.fa.fa-arrow-right
+
+%section.wrapper-md
+  .container
+    %h2.text-center The Southern Graphikaria Real Estate Market Is About To Skyrocket
+    %p.text-center.lead Very affordable 2 bedroom 2 bathroom beachfront homes.
+    %br.spacer-lg
+      .row
+        .col-sm-12.col-md-4.text-center
+          .widget.padding-md.bg-primary
+            %h2
+              %i.fa.fa-list
+              Listing
+            %p.lead We have already sold more than 5,000 Homes and we are still going at very good pace.
+        / /.col
+        .col-sm-12.col-md-4.text-center
+          .widget.padding-md.bg-info
+            %h2
+              %i.fa.fa-flag
+              Advertise
+            %p.lead We have already sold more than 5,000 Homes and we are still going at very good pace.
+        / /.col
+        .col-sm-12.col-md-4.text-center
+          .widget.padding-md.bg-primary
+            %h2
+              %i.fa.fa-question-circle
+              Consulting
+            %p.lead We have already sold more than 5,000 Homes and we are still going at very good pace.
+
+/ $('img').width($('.overlay-container').width());
+/ $('img').height($('.overlay-container').width()*.75);

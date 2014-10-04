@@ -36,6 +36,10 @@ class Property < ActiveRecord::Base
      principal_photo.url(:medium)
   end
 
+  def self.random
+    properties = Property.order("RANDOM()").limit(9)
+  end
+
   private
 
   def generate_reference

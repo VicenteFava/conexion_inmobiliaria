@@ -31,7 +31,7 @@ ActiveAdmin.register Property, as: "Propiedades" do
   filter :visible, label: "Visible"
  
   filter :reference, label: "Referencia"
-  filter :client_id, label: "Propietario", as: :select, collection: Client.all.order('name').map{|u| ["#{u.id} - #{u.name}", u.id]}
+  filter :client_id, label: "Propietario", as: :select, collection: -> { Client.all.order('name').map{|u| ["#{u.id} - #{u.name}", u.id]} }
   filter :property_type, label: "Tipo de tropiedad"
   filter :neighborhood, label: "Barrio"
   filter :price, label: "Precio"

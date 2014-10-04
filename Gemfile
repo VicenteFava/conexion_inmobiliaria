@@ -48,6 +48,10 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rails-i18n'
 
+gem 'bootstrap-sass'
+
+gem 'sprockets'
+
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'spring'
@@ -60,3 +64,7 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
 end
+
+gem 'jquery-turbolinks'
+
+gem 'haml'
