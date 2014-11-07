@@ -5,7 +5,12 @@
         %article.post
           .col-sm-12.col-md-5
             = link_to property do
-              %img.img-responsive.img-thumbnail{ src: property.principal_photo.url(:height => '200') }
+              / image tag
+              / image tag
+              / image tag
+              / image tag
+              / image tag
+              %img.img-responsive.img-thumbnail{ src: property.photo_url, :height => '200' }
           .col-sm-12.col-md-7
             %h3
               %a{:href => "#link"}

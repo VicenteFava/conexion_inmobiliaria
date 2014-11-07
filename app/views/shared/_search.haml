@@ -1,0 +1,23 @@
+/ <form action=' class='form-inline'>
+= form_tag properties_path, :method => 'get' do
+  .row
+    .col-md-3
+      = label_tag 'Tipo de Propiedad'
+      = select_tag 'search[property_type]', grouped_options_for_select(@property_types, @search.try(:[], :property_type)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :"data-style" => 'btn-primary' }
+    / /.col
+    .col-md-2
+      = label_tag 'Operación'
+      = select_tag 'search[transaction_type]', grouped_options_for_select(@transaction_types, @search.try(:[], :transaction_type)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-style' => 'btn-primary' }
+    / /.col
+    .col-md-3
+      = label_tag 'Barrio'
+      = select_tag 'search[neighborhood]', grouped_options_for_select(@neighborhood, @search.try(:[], :neighborhood)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-live-search' => :true, :'data-style' => 'btn-primary' }
+    / /.col
+    .col-md-2
+      = label_tag 'Precio'
+      = select_tag 'search[price]', grouped_options_for_select([]), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-style' => 'btn-primary' }
+    / /.col
+    .col-md-2
+      = label_tag 'Listo?'
+      .button
+        = submit_tag 'Search', name: nil, class: 'btn btn-primary btn-block'

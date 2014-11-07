@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file thatll be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.turbolinks
+//= require search
+//= require static_pages
+//= require properties
+//= require bootstrap.min
+//= require bootstrap-select.min
+//= require holder
