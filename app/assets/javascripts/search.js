@@ -1,54 +1,49 @@
 $(document).ready(function(){
-
-  $( '.selectpicker' ).selectpicker();
-  
+  $('.selectpicker').selectpicker('refresh');
+    
   $("#search_transaction_type").change(function() {
-    if($(this).val().length > 0) {
-      if($(this).val() == 3){
-
-        var newOptions = {  "Todos": "0",
-                            "Menos de US$200.000": "1",
-                            "Mas de US$200.000": "2",
-                            "Menos de US$0.000": "3",
-                        };
-
-
-        var $price = $("#search_price");
-
-        $price.empty();
-        $.each(newOptions, function(key, value) {
-          $price.append($("<option></option>")
-             .attr("value", value).text(key));
-        });
-
-        $('.selectpicker').selectpicker('refresh');
-      }
-      else {
-
-        var newOptions = {  "Todos": "0",
-                            "Menos de $20.000": "1",
-                            "Mas de $20.000": "2"
-                          };
-
-        var $price = $("#search_price");
-
-        $price.empty();
-        $.each(newOptions, function(key, value) {
-          $price.append($("<option></option>")
-             .attr("value", value).text(key));
-        });
-
-        $('.selectpicker').selectpicker('refresh');
-
-      }
-    }
-    else {
-      var $select = $("#search_price"); 
-      $select.empty();  
-      $select.append('<option value>Todos</option>');
-
-      $('.selectpicker').selectpicker('refresh');
-    }
+    complete_options($(this));
+    $('.dropdown-menu.inner.selectpicker').last().css('min-height', '26px')
   });
   
 });
+
+function complete_options(search) {
+  
+  var $price = $("#search_price"); 
+  $price.empty();  
+  $price.append(new Option("Todos", "0"));
+
+  if(search.val().length > 0) {
+    if(search.val() == 3) {
+
+      var newOptions = {  "Menos de US$200.000": "1",
+                          "Entre US$200.000 y US$500.000": "2",
+                          "Más de US$500.000": "3",
+                        };
+      complete_input(newOptions, $price);
+    }
+    else {
+
+      var newOptions = {  "Menos de $20.000": "1",
+                          "Mas de $20.000": "2"
+                        };
+      complete_input(newOptions, $price);
+    }
+  }
+  
+  $('.selectpicker').selectpicker('refresh');
+}
+
+function complete_input(newOptions, input) {
+  var optgroup = $('<optgroup>');
+  optgroup.attr('label','Operaciones');
+
+  $.each(newOptions, function(key, value) {
+    optgroup.append($("<option></option>")
+       .attr("value", value).text(key));
+  });
+  input.append(optgroup);
+
+  $('.selectpicker').selectpicker('refresh');
+}

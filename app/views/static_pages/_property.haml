@@ -1,14 +1,8 @@
 .thumbnail
-  .overlay-container
-    / image tag
-    / image tag
-    / image tag
-    / image tag
-    / image tag
-    %img{ src: property.photo_url, :height => '200', class: 'resize-image' }
-      .overlay-content
-        %h3.h4.headline Great Deal
-        %p So you know you're getting a top quality property from an experienced team.
+  .overlay-container.property-image{ :style => 'background-image: url("' + property.photo_url + '");' }
+    .overlay-content
+      %h3.h4.headline Great Deal
+      %p So you know you're getting a top quality property from an experienced team.
   .thumbnail-meta
     %p
       %i.fa.fa-fw.fa-home

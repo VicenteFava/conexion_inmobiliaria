@@ -24,11 +24,10 @@
 
 %section.wrapper-md.bg-highlight
   .container
-    - @random_properties.each_with_index do |p, i|
-      - if i % 4 == 0
-        .row
-      .col-sm-6.col-md-3
-        = render partial: 'property', :locals => { :property => p }
+    .row
+      - @random_properties.each do |p|
+        .col-sm-6.col-md-3
+          = render partial: 'property', :locals => { :property => p }
 
 
 / %section.wrapper-md.bg-primary

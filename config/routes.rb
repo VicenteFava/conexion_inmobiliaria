@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   root 'static_pages#landing'
 
   resources :properties, only: [:index, :show]
+  resources :messages, only: [:new, :create]
 
   get 'landing', to: 'static_pages#landing'
-  get 'contact', to: 'static_pages#contact'
-  post 'email', to: 'static_pages#email'
   
 end

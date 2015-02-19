@@ -1,0 +1,18 @@
+.row.property-title
+  .col-md-10.col-md-offset-1
+    Prodiedad #{ property.reference }
+
+.row.row-carousel.property-photos
+  .col-md-10.col-md-offset-1
+    = render partial: 'property_carousel', locals: { property: property }
+
+.row.property-table
+  .col-md-12
+    = render partial: 'property_table', locals: { property: property }
+
+.row.property-details
+  = render partial: 'property_details', locals: { property: property }
+
+.row.property-description
+  .col-md-12
+    = property.description

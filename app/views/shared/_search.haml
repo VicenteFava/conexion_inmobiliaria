@@ -11,11 +11,11 @@
     / /.col
     .col-md-3
       = label_tag 'Barrio'
-      = select_tag 'search[neighborhood]', grouped_options_for_select(@neighborhood, @search.try(:[], :neighborhood)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-live-search' => :true, :'data-style' => 'btn-primary' }
+      = select_tag 'search[neighborhood]', grouped_options_for_select(@neighborhoods, @search.try(:[], :neighborhood)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-live-search' => :true, :'data-style' => 'btn-primary' }
     / /.col
     .col-md-2
       = label_tag 'Precio'
-      = select_tag 'search[price]', grouped_options_for_select([]), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-style' => 'btn-primary' }
+      = select_tag 'search[price]', grouped_options_for_select(@prices, @search.try(:[], :price)), { class: 'form-control selectpicker show-tick', prompt: 'Todos', :'data-style' => 'btn-primary' }
     / /.col
     .col-md-2
       = label_tag 'Listo?'

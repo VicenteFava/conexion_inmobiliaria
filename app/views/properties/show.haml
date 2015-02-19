@@ -1,25 +1,25 @@
-.row
-  .col-md-12
-    / Carousel
-    #slider-property.carousel.slide{"data-ride" => "carousel"}
-      / Indicators
-      %ol.carousel-indicators
-        %li.active{"data-slide-to" => "0", "data-target" => "#slider-property"}
-        %li{"data-slide-to" => "1", "data-target" => "#slider-property"}
-        %li{"data-slide-to" => "2", "data-target" => "#slider-property"}
-      / Wrapper for slides
-      .carousel-inner
-        .item.active
-          = image_tag(@property.photo_url, :height => '100')
-          .carousel-caption
-            %h3 Caption Text
-        - @property.photos.each do |photo|
-          .item
-            = image_tag(photo.url, :height => '100')
-            .carousel-caption
-              %h3 Caption Text
-      / Controls
-      %a.left.carousel-control{"data-slide" => "prev", :href => "#slider-property", :role => "button"}
-        %span.glyphicon.glyphicon-chevron-left
-      %a.right.carousel-control{"data-slide" => "next", :href => "#slider-property", :role => "button"}
-        %span.glyphicon.glyphicon-chevron-right
+%section.wrapper-xs.bg-highlight.search
+  .container
+    .row
+      .col-sm-12
+        = render partial: 'shared/search'
+
+%section.property-container
+  .container
+    .col-md-10.col-md-offset-1
+      %ul.nav.nav-tabs.nav-justified
+        / Nav tabs
+        %li.title-tab.active
+          %a{'aria-controls' => 'details', 'data-toggle' => 'tab', :href => '#detail', :role => 'tab'}
+            %i.fa.fa-home
+            Detalles
+        %li.title-tab
+          %a{'aria-controls' => 'contact', 'data-toggle' => 'tab', :href => '#contact', :role => 'tab'}
+            %i.fa.fa-phone
+            Contacto
+      / Tab panes
+      .tab-content
+        #detail.tab-pane.fade.in.active
+          = render partial: 'property_information', locals: { property: @property }
+        #contact.tab-pane.fade
+          = render partial: 'property_contact', locals: { property: @property }
