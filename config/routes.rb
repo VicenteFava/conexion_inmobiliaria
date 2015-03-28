@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   root 'static_pages#landing'
 
   resources :properties, only: [:index, :show]
+  resources :messages, only: [:new, :create]
 
-  scope :static_pages do
-    get :landing, to: 'static_pages#landing'
-  end
+  get 'landing', to: 'static_pages#landing'
   
 end

@@ -1,0 +1,71 @@
+%table.table.table-bordered
+  %tbody
+    
+    %tr
+      %td.table-cell
+        %strong Referencia
+      %td
+        = property.reference
+    
+    - if property.property_type.present?
+      %tr
+        %td
+          %strong Tipo
+        %td
+          = property.property_type.name
+
+    - if property.floor.present?
+      %tr
+        %td
+          %strong Piso
+        %td
+          = property.floor
+
+    - if property.transaction_types.present?
+      %tr
+        %td
+          %strong Operacion
+        %td 
+          = property.transaction_types
+
+    - if property.price.present?
+      %tr
+        %td
+          %strong Precio
+        %td
+          = number_with_delimiter(property.price.to_i, delimiter: '.')
+
+    - if property.neighborhood.present?
+      %tr
+        %td
+          %strong Barrio
+        %td
+          = property.neighborhood.name
+
+    - if property.bedrooms.present?
+      %tr
+        %td
+          %strong Cuartos
+        %td
+          = property.bedrooms
+
+    - if property.bathrooms.present?
+      %tr
+        %td
+          %strong Baños
+        %td
+          = property.bathrooms
+
+    - if property.built_up.present?
+      %tr
+        %td
+          %strong Metraje
+        %td
+          #{ property.built_up.to_i } m<sup>2</sup>
+
+    - if property.lot_size.present?
+      %tr
+        %td
+          %strong Terreno
+        %td
+          #{ property.lot_size.to_i } m<sup>2</sup>

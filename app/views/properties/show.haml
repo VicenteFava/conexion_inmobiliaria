@@ -1,0 +1,25 @@
+%section.wrapper-xs.bg-highlight.search
+  .container
+    .row
+      .col-sm-12
+        = render partial: 'shared/search'
+
+%section.property-container
+  .container
+    .col-md-10.col-md-offset-1
+      %ul.nav.nav-tabs.nav-justified
+        / Nav tabs
+        %li.title-tab.active
+          %a{'aria-controls' => 'details', 'data-toggle' => 'tab', :href => '#detail', :role => 'tab'}
+            %i.fa.fa-home
+            Detalles
+        %li.title-tab
+          %a{'aria-controls' => 'contact', 'data-toggle' => 'tab', :href => '#contact', :role => 'tab'}
+            %i.fa.fa-phone
+            Contacto
+      / Tab panes
+      .tab-content
+        #detail.tab-pane.fade.in.active
+          = render partial: 'property_information', locals: { property: @property }
+        #contact.tab-pane.fade
+          = render partial: 'property_contact', locals: { property: @property }

@@ -1,0 +1,19 @@
+%section.wrapper-xs.bg-highlight.search
+  .container
+    .row
+      .col-sm-12
+        = render partial: 'shared/search'
+
+- if @properties.length > 0
+  - @properties.each do |p|
+    %section.wrapper-md.list{ class: cycle('', 'background-gray') }
+      .container
+        = render partial: 'property', locals: { property: p }
+
+- else
+  .no-results-properties
+    %p
+      No existen propiedades con estas carateristicas. Realice otra bsuqueda o contactenos para una atención mas personalizada
+
+.container
+  = will_paginate @properties
